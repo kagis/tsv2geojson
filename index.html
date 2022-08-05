@@ -18,10 +18,10 @@
 function process() {
   const inp = document.getElementById('inp').value;
   document.getElementById('out').value = JSON.stringify({
-    type: 'LineString',
-    coordinates: inp.trim().split('\n').map(
+    type: 'Polygon',
+    coordinates: [inp.trim().split('\n').map(
       it => it.trim().split(/\s+/).map(x => Number(x.replace(',', '.')))
-    ),
+    )],
   }, null, 2);
 }
 </script>
